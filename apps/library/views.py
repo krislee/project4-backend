@@ -56,7 +56,7 @@ class AllBooks(generics.ListCreateAPIView):
                 )
                 if not books:
                     # note: change type of error later
-                    raise ValidationError("You cannot access to books in the genre that you do not have")
+                    raise ValidationError("You have not made a book yet in this genre")
                 else:
                     return books
         except Genre.DoesNotExist:
