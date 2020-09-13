@@ -54,6 +54,7 @@ class AllBooks(generics.ListCreateAPIView):
             )
             if one_genre.user == self.request.user:
                 print("World")
+                # print(f'tasks of user: {self.request.user.tasks}')
                 return Book.objects.filter(
                     user=self.request.user,
                     genre=one_genre
@@ -62,6 +63,11 @@ class AllBooks(generics.ListCreateAPIView):
             else:
                 print("bye")
                 return Response("You cannot access to books in the genre that you do not have")
+    # filter(task_id=self.request.data['genre'])
+
+    def create(self, request, *args, **kwargs):
+        if self.request.user.genres.get(pk=self.request.data['genre']):
+            return super().create(request)
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
@@ -82,6 +88,12 @@ class SingleBook(generics.RetrieveUpdateDestroyAPIView):
                 pk=self.kwargs.get('pk'),
                 genre=genre
             )
+
+    def update(self, request, *args, **kwargs):
+        if self.request.user.genres.get(pk=self.request.data['genre']):
+            return super().update(request, *args, **kwargs)
+
+
 
 
 
