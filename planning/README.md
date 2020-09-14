@@ -10,9 +10,18 @@
 |Day 1| Create models for genre and book | Incomplete
 |Day 1| Create serializers for genre | Incomplete
 |Day 1| Create serializers for book | Incomplete
-|Day 3| Create views and urls for genre | Incomplete
-|Day 3| Create views and urls for book | Incomplete
-|Day 3| Test views on Postman | Incomplete
+|Day 2| Make create view for genre | Incomplete
+|Day 2| Make list view for genre | Incomplete
+|Day 2| Make retrieve view for genre | Incomplete
+|Day 2| Make update view for genre | Incomplete
+|Day 2| Make delete view for genre | Incomplete
+|Day 2| Make create view for book | Incomplete
+|Day 2| Make list view for book | Incomplete
+|Day 2| Make retrieve view for book | Incomplete
+|Day 2| Make update view for book | Incomplete
+|Day 2| Make delete view for book | Incomplete
+|Day 2| Make urls for genre and book views | Incomplete
+|Day 2| Test views on Postman | Incomplete
 
 
 ## Frontend
