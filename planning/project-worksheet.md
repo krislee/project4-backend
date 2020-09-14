@@ -23,7 +23,7 @@ The Book Collection Tracker is a tracker for book lovers to keep track of the bo
 - [Wireframe](https://res.cloudinary.com/dhiwn0i0g/image/upload/v1600044219/Screen_Shot_2020-09-13_at_8.43.21_PM_wgkmuk.png)
 
 ## Time/Priority Matrix 
-- [Matrix] (https://res.cloudinary.com/dhiwn0i0g/image/upload/v1600040003/My_First_Board_2_twhkpr.jpg)
+- [Time/Priority Matrix](https://res.cloudinary.com/dhiwn0i0g/image/upload/v1600040003/My_First_Board_2_twhkpr.jpg)
 
 ### MVP/PostMVP 
 #### MVP (examples)
