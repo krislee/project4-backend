@@ -26,7 +26,7 @@ The Book Collection Tracker is a tracker for book lovers to keep track of the bo
 - [Time/Priority Matrix](https://res.cloudinary.com/dhiwn0i0g/image/upload/v1600040003/My_First_Board_2_twhkpr.jpg)
 
 ### MVP/PostMVP 
-#### MVP (examples)
+#### MVP
 
 - Create user, genre, and book model
 - Create user authentication
@@ -52,22 +52,22 @@ The Book Collection Tracker is a tracker for book lovers to keep track of the bo
 ## Functional Components
 #### MVP
 
-| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
+| Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Create user model | H | 1hr | 1hr | 1hr|
-| Creare genre model | H | 1hr | 0.5hr | 0.5hr|
-| Create video model | H | H | 0.5hr | 0.5hr|
-| Build user authentication | H | 1hr| 1hr | 1hr |
-| Create list and create view for genre model| H | 3hr | 2hr | 2hr|
-| Create retrieve and update view for genre model| H | 3hr | 0hr | 0hr|
-| Create destroy view for genre model| H | 4hr | 0hr | 0hr|
-| Create list and create view for video model | H | 3hrs| 1.5hr | 1.5hr |
-| Create retrieve and update view for video model | H | 3hr | 1.5hr | 1.5hr|
-| Create destroy view for video model | H | 1hr | 0hr | 0hr|
-| Test genre view with user authentication locally| H | 2hr | 1hr | 1hr|
-| Test book view with user authentication locally| H | 2hr | 3hr | 3hr|
-| Test genre view with user authentication using Heroku| H | 1hr | 0.5hr | 1hr|
-| Test book view with user authentication using Heroku| H | 2hr | 1hr | 1hr|
+| Create user model | H | 1hr | hr | hr|
+| Creare genre model | H | 1hr | hr | hr|
+| Create video model | H | 1hr | hr | hr|
+| Build user authentication | H | 1hr| hr | hr |
+| Create list and create view for genre model| H | 3hr | hr | hr|
+| Create retrieve and update view for genre model| H | 3hr | hr | hr|
+| Create destroy view for genre model| H | 4hr | hr | hr|
+| Create list and create view for video model | H | 3hrs| hr | hr |
+| Create retrieve and update view for video model | H | 3hr | hr | hr|
+| Create destroy view for video model | H | 1hr | hr | hr|
+| Test genre view with user authentication locally| H | 2hr | hr | hr|
+| Test book view with user authentication locally| H | 2hr | hr | hr|
+| Test genre view with user authentication using Heroku| H | hr | hr | hr|
+| Test book view with user authentication using Heroku| H | hr | hr | hr|
 | Total | H | 27.5hrs| -hrs | -hrs |
 
 #### PostMVP
