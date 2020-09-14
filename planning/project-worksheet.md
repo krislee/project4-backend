@@ -12,7 +12,7 @@
 |Day 5| Final Touches and Present | Incomplete
 
 ## Frontend
-Click [here](https://github.com/krislee/project4-frontend) to view repository.
+Click [here](https://github.com/krislee/project4-frontend) to view frontend repository.
 
 ## Project Description
 
