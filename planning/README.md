@@ -1,94 +1,108 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Unit 4 Project - Build a full CRUD website application using Django Restframework + JWT
+# Project Overview
 
-## Overview
+## Project Schedule
 
-This project will give you a chance to use the skills we've learned in class to create a full CRUD web application using the skills that you have learned in this unite. You'll get a chance to use JavaScript or Vue to tackle interactions on the front-end, as well as a custom API using Django, Django restframework, JWT with postgresql in the backend.
+|  Day | Deliverable | Status
+|---|---| ---|
+|Day 1| Project Description | Complete
+|Day 1| Wireframes / Priority Matrix / Timeline `backend` and `frontend`| Complete
+|Day 2| Working RestAPI | Incomplete
+|Day 3| Core Application Structure (HTML, CSS, etc.) | Incomplete
+|Day 4| MVP & Bug Fixes | Incomplete
+|Day 5| Final Touches and Present | Incomplete
 
-You will be working individually for this project, but we'll be guiding you throughout the process and helping as you go.
+## Frontend
+Click [here](https://github.com/krislee/project4-frontend) to view frontend repository.
 
----
+## Project Description
 
-## Requirements
-It is important to keep in mind the goal of this program and these projects, they are to utilize the skills you have been taught and the skills that employers care about. You should strive to build projects that will catch an employers eye and get you hired.
+The Book Collection Tracker is a tracker for book lovers to keep track of the books they are reading. The application is built using Python Django framework for the backend server and Postgres SQL for the database to store all the user's books. It consists of three models, which are the user, genre, and book models. These models have a one to many relationship, where one user has many genres and books, and one genre has many books under that genre. By setting up the models and serializers, the tracker has a RESTful API that allows book lovers to create, read, update, and delete the books they are reading. 
 
-### Technical Requirements
-Two separate repo's are requied for this project, one for the Back-End and one for the Front-End. They must not reside on the same repo.
+## Wireframe
 
-**Back-End Requirements:**
+- [Wireframe](https://res.cloudinary.com/dhiwn0i0g/image/upload/v1600044219/Screen_Shot_2020-09-13_at_8.43.21_PM_wgkmuk.png)
 
-- Your back-end must be a Django, djangorestframework, djangorestframework-jwt, with postgresql
-- You must have minimum of three or models with two associations.
-- Must have Create, Read, Update, and Destroy functionality built throughout the
-  app (i.e. You don't need full CRUD on every model, just full CRUD throughout
-  your models where it makes sense).
+## Time/Priority Matrix 
+- [Time/Priority Matrix](https://res.cloudinary.com/dhiwn0i0g/image/upload/v1600040003/My_First_Board_2_twhkpr.jpg)
 
-**Front-End Requirements:**
-- Your front-end must use JQuery or Vue and leverage the backend API.
-- You must communicate with the back-end API RESTfully to Create, Read, Update,
-  and Destroy resources.
-- Your frontend must be responsive and work on mobile phones, tablets, and desktops
-- A mobile nav that expands and collapses when a user clicks on the hamburger icon.
+### MVP/PostMVP 
+#### MVP
 
-Review the [Rubric](https://git.generalassemb.ly/SEIR-629/PROJECT-4/blob/master/evaluation-rubric.md) for the specifics of how your project will
-be graded.
+- Create user, genre, and book model
+- Create user authentication
+- Create genre and book serializers
+- Create views for genre model
+- Create views for book model 
+- Create urls for user login and registration
+- Create url for genre view
+- Create urls for book view
+- Test API with local server on Postman
+- Heroku deployment
+- Test API with Heroku server on Postman
+
+#### PostMVP 
+
+- Create file upload to upload book reports
+- User can share book recommendation to another user 
+- User can favorite books
+- User can see the favorite books under favorites category
+- User can also rate each book
+- Make another application for the public to see top rated books by users in each genre
+
+## Functional Components
+#### MVP
+
+| Component | Priority | Estimated Time | Time Invested | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| Create user model | H | 1hr | hr | hr|
+| Creare genre model | H | 1hr | hr | hr|
+| Create video model | H | 1hr | hr | hr|
+| Build user authentication | H | 1hr| hr | hr |
+| Create list and create view for genre model| H | 3hr | hr | hr|
+| Create retrieve and update view for genre model| H | 3hr | hr | hr|
+| Create destroy view for genre model| H | 4hr | hr | hr|
+| Create list and create view for video model | H | 3hrs| hr | hr |
+| Create retrieve and update view for video model | H | 3hr | hr | hr|
+| Create destroy view for video model | H | 1hr | hr | hr|
+| Test genre view with user authentication locally| H | 2hr | hr | hr|
+| Test book view with user authentication locally| H | 2hr | hr | hr|
+| Test genre view with user authentication using Heroku| H | hr | hr | hr|
+| Test book view with user authentication using Heroku| H | hr | hr | hr|
+| Total | H | 27.5hrs| -hrs | -hrs |
+
+#### PostMVP
+
+| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
+| --- | :---: |  :---: | :---: | :---: |
+| Create file upload function for book | L | 3hr | -hr | -hr|
+| Share book recommendations to other users | L | 12hr | -hr | -hr|
+| Create Favorite books model | M | 2hr | -hr | -hr|
+| Create Favorite book view | M | 4hr | -hr | -hr|
+| Add rate book field| M | 2hr | -hr | -hr|
+| Create another application to list top rated books | L | 12hr | -hr | -hr|
+| Total | H | 35hrs| -hrs | -hrs |
+
+## Additional Libraries
+
+- Django REST Framework
+- Django Heroku
+- Django Rest Framework JWT
+
+## Code Snippet
+
+Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
+
+```
+function reverse(string) {
+	// here is the code to reverse a string of text
+}
+```
+
+## Issues and Resolutions
+ Use this section to list of all major issues encountered and their resolution.
+
+#### SAMPLE.....
+**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
+**RESOLUTION**: Missing comma after first object in sources {} object
 
 
-### Necessary Deliverables
-Your submission must include **all** of the following:
-
-#### Project Idea and Initial Planning
-By the end of Day 1 you need to submit:
-
-1. Your project idea (a brief 2-3 sentence description of your app)
-2. A list of your models and their properties
-3. Link to the `frontend` repository with project worksheet
-4. Link to the `backend` repository with project worksheet
-
-These and any other planning assets (wireframes, user stories, etc) should go
-inside a `planning/` directory inside your `backend` and `frontend` project repository accordingly.
-
-### Suggested Ways to Start
-
-- **Don’t hesitate to write throwaway code** to solve short-term problems.
-- **Read the docs for whatever technologies, frameworks, or APIs you use**.
-- **Write your code DRY** and **build your APIs RESTful**.
-- **Commit early, commit often**. Don’t be afraid to break something because you can always go back in time to a previous version.
-- **Keep user stories small and well-defined**. Remember – user stories focus on what a user needs, not what development tasks need accomplishing.
-- **Write code another developer wouldn't have to ask you about**. Do your naming conventions make sense? Would another developer be able to look at your app and understand what everything is?
-- **Make it all well-formatted**. Are you indenting, consistently? Can we find the start and end of every div, curly brace, etc.?
-- **Comment your code**. Will someone understand what is going on in each block or function? Even if it's obvious, explaining the what & why means someone else can pick it up and get it.
-- **Write pseudocode before you write actual code**. Thinking through the logic of something helps.
-
-
-### Final Application
-
-Your project is due on the last day of Project Week. Create an issue on this repo containing:
-
-- A link to your deployed application
-- A link to your Project 2 Github repositories
-
-The repository for your backend API should include:
-
-- A working JSON API built using Django that meets the technical requirements above.
-- Frequent commits dating back to the very beginning of the project.
-- A `planning/` directory in the root of your `backend` and `frontend` repo that contains a `readme` with all: 
-    - A couple of paragraphs about the **general approach you took**.
-    - Link to your **user stories** – who are your users, what do they want, and why?
-    - Link to your **wireframes** – sketches of  views and interfaces in your application.
-    - Link to your **Time/Priority** matrix 
-    - Table including functionality and estimated/actual time for completion
-    - Descriptions of any **unsolved problems** or **hurdles** you had to overcome.
-
-The repository for the frontend of your application should include:
-
-- A working frontend application built with HTML, CSS, Bootstrap, JQuery or vue ect.
-- CRUD functionality
-- Frequent commits dating back to the very beginning of the project.
-- Mobile first, responsive web application (Mobile, Tablet and Desktop).
-
-#### Deployment
-
-- Your API Backend must be deployed to Heroku and your front-end must be deployed to
-  Netlify. Applications that are not deployed will be considered incomplete.
- 
----
