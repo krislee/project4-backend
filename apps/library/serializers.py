@@ -2,9 +2,11 @@ from rest_framework import serializers
 from .models import Genre, Book
 
 class BookSerializer(serializers.ModelSerializer):
-    # Need to serialize user since we need to deserialize request.user
-    user = serializers.ReadOnlyField(source='user.username') # WHAT IS SOURCE FOR? WHAT IS READONLYFIELD FOR? WHY DON'T WE USE READONLYFIELD FOR THE OTHER FIELDS
+    # Need to serialize user since we need to deserialize the user object (request.user) in view
+    user = serializers.ReadOnlyField(source='user.username')
+    # WHAT IS SOURCE FOR?  WHY DON'T WE USE ReadOnlyField FOR THE OTHER FIELDS?
     # ReadOnlyField: returns the value of the field without modification
+    # ReadOnlyField vs. read_only=True
 
     class Meta:
         model = Book
@@ -14,6 +16,7 @@ class BookSerializer(serializers.ModelSerializer):
 class GenreSerializer(serializers.ModelSerializer):
     user = serializers.ReadOnlyField(source='user.username')
 
+    # When we call on genres list view, books will be a part of each genre, so we need to serialize the books too by calling on Book Serializer
     books = BookSerializer(many=True, read_only=True, required=False)
 
     class Meta:

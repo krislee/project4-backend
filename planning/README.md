@@ -6,13 +6,20 @@
 |---|---| ---|
 |Day 1| Project Description | Complete
 |Day 1| Wireframes / Priority Matrix / Timeline `backend` and `frontend`| Complete
-|Day 2| Working RestAPI | Incomplete
-|Day 3| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|Day 4| MVP & Bug Fixes | Incomplete
-|Day 5| Final Touches and Present | Incomplete
+|Day 1| Authorization/Authentication | Complete
+|Day 1| Create models for genre and book | Incomplete
+|Day 1| Create serializers for genre | Incomplete
+|Day 1| Create serializers for book | Incomplete
+|Day 3| Create views and urls for genre | Incomplete
+|Day 3| Create views and urls for book | Incomplete
+|Day 3| Test views on Postman | Incomplete
+
 
 ## Frontend
 Click [here](https://github.com/krislee/project4-frontend) to view frontend repository.
+
+## Live Website
+Click [here](https://project4-ga.netlify.app/#/) to view live website.
 
 ## Project Description
 
