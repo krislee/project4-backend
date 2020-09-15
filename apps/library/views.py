@@ -134,7 +134,14 @@ class SingleBook(generics.RetrieveUpdateDestroyAPIView):
             #  CHANGE ERROR TYPE
             raise ValidationError("You cannot delete the book in a genre that you do not have access to")
 
-    # How to customize error if user entered the genre_pk or book_pk in the URL that user does not have?
+class Books(viewsets.ModelViewSet):
+    permission_classes = (IsAuthenticated,)
+    serializer_class = BookSerializer
+
+    def get_queryset(self):
+     queryset = Book.objects.all().filter(owner=self.request.user)
+     return queryset
+
 
 
 
