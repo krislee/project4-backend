@@ -7,14 +7,14 @@
 |Day 1| Project Description | Complete
 |Day 1| Wireframes / Priority Matrix / Timeline `backend` and `frontend`| Complete
 |Day 1| Authorization/Authentication | Complete
-|Day 1| Create models for genre and book | Incomplete
-|Day 1| Create serializers for genre | Incomplete
-|Day 1| Create serializers for book | Incomplete
-|Day 2| Make create view for genre | Incomplete
-|Day 2| Make list view for genre | Incomplete
-|Day 2| Make retrieve view for genre | Incomplete
-|Day 2| Make update view for genre | Incomplete
-|Day 2| Make delete view for genre | Incomplete
+|Day 1| Create models for genre and book | Complete
+|Day 1| Create serializers for genre | Complete
+|Day 1| Create serializers for book | Complete
+|Day 2| Make create view for genre | Complete
+|Day 2| Make list view for genre | Complete
+|Day 2| Make retrieve view for genre | Complete
+|Day 2| Make update view for genre | Complete
+|Day 2| Make delete view for genre | Complete
 |Day 2| Make create view for book | Incomplete
 |Day 2| Make list view for book | Incomplete
 |Day 2| Make retrieve view for book | Incomplete
