@@ -15,8 +15,8 @@
 |Day 2| Make retrieve view for genre | Complete
 |Day 2| Make update view for genre | Complete
 |Day 2| Make delete view for genre | Complete
-|Day 2| Make create view for book | Incomplete
-|Day 2| Make list view for book | Incomplete
+|Day 2| Make create view for book | Complete
+|Day 2| Make list view for book | Complete
 |Day 2| Make retrieve view for book | Incomplete
 |Day 2| Make update view for book | Incomplete
 |Day 2| Make delete view for book | Incomplete
