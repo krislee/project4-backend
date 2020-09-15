@@ -30,6 +30,9 @@ class GenreViewSet(viewsets.ModelViewSet):
         )
         # If there is such genre for that user, then error is raised to prevent user from recreating the same genre
         if genre:
+            # return Response({
+            #     'message': 'You have not made a book yet in this genre'
+            # })
             raise ValidationError("This genre exists already.")
 
         # If there is no such genre for that user, then deserialize incoming request data in the body before creating

@@ -34,9 +34,9 @@ Click [here](https://project4-ga.netlify.app/#/) to view live website.
 
 The Book Collection Tracker is a tracker for book lovers to keep track of the books they are reading. The application is built using Python Django framework for the backend server and Postgres SQL for the database to store all the user's books. It consists of three models, which are the user, genre, and book models. These models have a one to many relationship, where one user has many genres and books, and one genre has many books under that genre. By setting up the models and serializers, the tracker has a RESTful API that allows book lovers to create, read, update, and delete the books they are reading. 
 
-## Wireframe
+## ERD
 
-- [Wireframe](https://res.cloudinary.com/dhiwn0i0g/image/upload/v1600044219/Screen_Shot_2020-09-13_at_8.43.21_PM_wgkmuk.png)
+- [ERD](https://res.cloudinary.com/dhiwn0i0g/image/upload/v1600044219/Screen_Shot_2020-09-13_at_8.43.21_PM_wgkmuk.png)
 
 ## Time/Priority Matrix 
 - [Time/Priority Matrix](https://res.cloudinary.com/dhiwn0i0g/image/upload/v1600040003/My_First_Board_2_twhkpr.jpg)
