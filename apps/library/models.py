@@ -32,7 +32,7 @@ class Book(models.Model):
 
     title = models.CharField(max_length=255, unique=True)
     author = models.CharField(max_length=255)
-    status = models.IntegerField()
+    status = models.IntegerField(default=2)
     review = models.TextField(blank=True)
     photo = models.TextField(blank=True)
 

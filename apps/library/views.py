@@ -134,18 +134,6 @@ class SingleBook(generics.RetrieveUpdateDestroyAPIView):
             #  CHANGE ERROR TYPE
             raise ValidationError("You cannot delete the book in a genre that you do not have access to")
 
-class Books(viewsets.ModelViewSet):
-    permission_classes = (IsAuthenticated,)
-    serializer_class = BookSerializer
-
-    def get_queryset(self):
-     queryset = Book.objects.all().filter(owner=self.request.user)
-     return queryset
-
-
-
-
-
 
 
 
