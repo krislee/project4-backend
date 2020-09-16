@@ -46,6 +46,16 @@ class GenreViewSet(viewsets.ModelViewSet):
         # Return the created object by calling .save() during the deserialization
         serializer.save(user=self.request.user) # add additional data not part of the request data, like the current user to the genre object
 
+    def destroy(self, request, *args, **kwargs):
+        # print(kwargs)
+        genre = Genre.objects.get(pk=self.kwargs['pk'])
+        if not self.request.user == genre.user:
+            raise PermissionDenied("You are not authorized to delete the genre")
+        super().destroy(request, *args, **kwargs)
+        return Response({
+            "message": "You successfully deleted the genre"
+        })
+
 
 # Inherit from ListCreate APIView to get a list of all books in a genre and create book in a genre
 class AllBooks(generics.ListCreateAPIView):
@@ -129,7 +139,10 @@ class SingleBook(generics.RetrieveUpdateDestroyAPIView):
         # Try to see if the user has the genre provided in the URL. If user does not have the genre provided from the URL, either the genre does not exist in db or belongs to someone else, then the except block is run.
         try:
             if self.request.user.genres.get(pk=self.kwargs['genre_pk']):
-                return super().destroy(request, *args, **kwargs)
+                super().destroy(request, *args, **kwargs)
+                return Response({
+                    "message": "Successfully deleted"
+                })
         except Genre.DoesNotExist:
             #  CHANGE ERROR TYPE
             raise ValidationError("You cannot delete the book in a genre that you do not have access to")
