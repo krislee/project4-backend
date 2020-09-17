@@ -17,11 +17,11 @@
 |Day 2| Make delete view for genre | Complete
 |Day 2| Make create view for book | Complete
 |Day 2| Make list view for book | Complete
-|Day 2| Make retrieve view for book | Incomplete
-|Day 2| Make update view for book | Incomplete
-|Day 2| Make delete view for book | Incomplete
-|Day 2| Make urls for genre and book views | Incomplete
-|Day 2| Test views on Postman | Incomplete
+|Day 2| Make retrieve view for book | Complete
+|Day 2| Make update view for book | Complete
+|Day 2| Make delete view for book | Complete
+|Day 2| Make urls for genre and book views | Complete
+|Day 2| Test views on Postman | Complete
 
 
 ## Frontend

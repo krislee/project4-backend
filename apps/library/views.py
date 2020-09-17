@@ -97,6 +97,7 @@ class AllBooks(generics.ListCreateAPIView):
         try:
             if self.request.user.genres.get(pk=self.request.data['genre']):
                 # If data is valid during deserialization, then create book object
+                self.request.data['title'].capitalize()
                 return super().create(request)
         except Genre.DoesNotExist:
             raise ValidationError("You cannot create the book in a genre that you do not have access to")
