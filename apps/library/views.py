@@ -42,6 +42,25 @@ class GenreViewSet(viewsets.ModelViewSet):
         # Return the created object by calling .save() during the deserialization
         serializer.save(user=self.request.user) # add additional data not part of the request data, like the current user to the genre object
 
+    def update(self, request, *args, **kwargs):
+        genre = Genre.objects.filter(
+            name=self.request.data['name'],
+            user=self.request.user
+        )
+        print(self.kwargs['pk'])
+        if genre:
+            print("hello")
+            if Genre.objects.get(pk=self.kwargs['pk']).name != self.request.data['name']:
+                print("bye")
+                return Response({
+                    "message": "This genre already exists"
+                })
+            else:
+                print("world")
+                return super().update(request, *args, **kwargs)
+        else:
+            return super().update(request, *args, **kwargs)
+
     def destroy(self, request, *args, **kwargs):
         # print(kwargs)
         genre = Genre.objects.get(pk=self.kwargs['pk'])
@@ -90,7 +109,16 @@ class AllBooks(generics.ListCreateAPIView):
         try:
             if self.request.user.genres.get(pk=self.request.data['genre']):
                 # If data is valid during deserialization, then create book object
-                return super().create(request)
+                book = Book.objects.filter(
+                    user=self.request.user,
+                    title=request.data.get('title')
+                )
+                if book:
+                    return Response({
+                        "message": "This books exists already"
+                    })
+                else:
+                    return super().create(request)
         except Genre.DoesNotExist:
             raise ValidationError("You cannot create the book in a genre that you do not have access to")
 
@@ -122,9 +150,22 @@ class SingleBook(generics.RetrieveUpdateDestroyAPIView):
 
     def update(self, request, *args, **kwargs):
         # Check to see if the user has the genre provided in request data by grabbing the genre under that user. If user does not have the genre provided from the request data, either the genre does not exist in the db or belongs to someone else, then Validation Error is run, regardless if the URL has the ids of the book and genre that belongs to the user or does not belongs to the user.
+        # If user has the genre, check to see if the update title exists already in the db. If the user already has the title, then check if the title is the original title. If original same existing title, then let update continue, but if not the same as the original title then update fails. If the title does not exist already, then update.
         try:
             if self.request.user.genres.get(pk=self.request.data['genre']):
-                return super().update(request, *args, **kwargs)
+                book = Book.objects.filter(
+                    user=self.request.user,
+                    title=request.data.get('title')
+                )
+                if book:
+                    if Book.objects.get(pk=self.kwargs['pk']).title != self.request.data['title']:
+                        return Response({
+                            "message": "This books exists already"
+                        })
+                    else:
+                        return super().update(request, *args, **kwargs)
+                else:
+                    return super().update(request, *args, **kwargs)
         except Genre.DoesNotExist:
             raise ValidationError("You cannot update the book in a genre that you do not have access to")
 
