@@ -5,6 +5,7 @@ from .models import User
 
 ####### SERIALIZER FOR REGISTRATION #######
 class RegistrationSerializer(serializers.ModelSerializer):
+    # username = serializers.CharField(max_length=255, min_length=8, write_only=True)
     password = serializers.CharField(max_length=255, min_length=8, write_only=True)
     token = serializers.CharField(max_length=255, read_only=True)
 
