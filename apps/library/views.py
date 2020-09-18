@@ -30,15 +30,11 @@ class GenreViewSet(viewsets.ModelViewSet):
         )
         # If there is such genre for that user, then error is raised to prevent user from recreating the same genre
         if genre:
-            # return Response({
-            #     'message': 'You have not made a book yet in this genre'
-            # })
             raise ValidationError("This genre exists already.")
 
         # If there is no such genre for that user, then deserialize incoming request data in the body before creating
         serializer = GenreSerializer(data=request.data)
         # If serializer finds the incoming request data matching itself, then it is valid and will create the genre object by taking in request
-        # Why not .create(request.data)???
         if serializer.is_valid():
             return super().create(request)
 
@@ -55,7 +51,6 @@ class GenreViewSet(viewsets.ModelViewSet):
         return Response({
             "message": "You successfully deleted the genre"
         })
-
 
 # Inherit from ListCreate APIView to get a list of all books in a genre and create book in a genre
 class AllBooks(generics.ListCreateAPIView):
@@ -83,12 +78,10 @@ class AllBooks(generics.ListCreateAPIView):
                 )
                 # If there are no books yet under the genre, then raise an error, else return all books under the genre of that user
                 if not books:
-                    # CHANGE ERROR TYPE:
                     raise ValidationError("You have not made a book yet in this genre")
                 else:
                     return books
         except Genre.DoesNotExist:
-            # CHANGE ERROR TYPE:
             raise ValidationError("You cannot access to books in the genre that you do not have") # pass does not work here
 
     # Override the inherited create method to customize error
@@ -97,7 +90,6 @@ class AllBooks(generics.ListCreateAPIView):
         try:
             if self.request.user.genres.get(pk=self.request.data['genre']):
                 # If data is valid during deserialization, then create book object
-                self.request.data['title'].capitalize()
                 return super().create(request)
         except Genre.DoesNotExist:
             raise ValidationError("You cannot create the book in a genre that you do not have access to")
@@ -126,7 +118,7 @@ class SingleBook(generics.RetrieveUpdateDestroyAPIView):
                     genre=genre
                 )
         except Genre.DoesNotExist:
-            pass # Does this give detail?
+            pass
 
     def update(self, request, *args, **kwargs):
         # Check to see if the user has the genre provided in request data by grabbing the genre under that user. If user does not have the genre provided from the request data, either the genre does not exist in the db or belongs to someone else, then Validation Error is run, regardless if the URL has the ids of the book and genre that belongs to the user or does not belongs to the user.
@@ -145,7 +137,6 @@ class SingleBook(generics.RetrieveUpdateDestroyAPIView):
                     "message": "Successfully deleted"
                 })
         except Genre.DoesNotExist:
-            #  CHANGE ERROR TYPE
             raise ValidationError("You cannot delete the book in a genre that you do not have access to")
 
 

@@ -20,6 +20,10 @@ class Genre(models.Model):
     def __str__(self):
         return self.name
 
+    def save(self, *args, **kwargs):
+        self.name = self.name.lower().title()
+        return super(Genre, self).save(*args, **kwargs)
+
 
 class Book(models.Model):
     # Book belongs to genre and user through genre
@@ -30,7 +34,7 @@ class Book(models.Model):
     user = models.ForeignKey(User, related_name="books", on_delete=models.CASCADE)
     genre = models.ForeignKey(Genre, related_name="books", on_delete=models.CASCADE)
 
-    title = models.CharField(max_length=255, unique=True)
+    title = models.CharField(max_length=255)
     author = models.CharField(max_length=255)
     status = models.IntegerField(default=2)
     review = models.TextField(blank=True)
@@ -42,3 +46,8 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+
+    def save(self, *args, **kwargs):
+        self.title = self.title.lower().title()
+        self.author = self.author.lower().title()
+        return super(Book, self).save(*args, **kwargs)
