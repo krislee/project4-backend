@@ -28,7 +28,7 @@
 Click [here](https://github.com/krislee/project4-frontend) to view frontend repository.
 
 ## Live Website
-Click [here](https://project4-ga.netlify.app/#/) to view live website.
+Click [here](https://official-library.netlify.app/#/) to view live website.
 
 ## Project Description
 
