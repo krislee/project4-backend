@@ -18,7 +18,7 @@ class GenreViewSet(viewsets.ModelViewSet):
     # Override generic queryset (basename provided in the URL router)
     def get_queryset(self):
         # Return all genres that belong to the user
-        query_set = Genre.objects.all().filter(user=self.request.user).order_by('created_date')
+        query_set = Genre.objects.all().filter(user=self.request.user).order_by('created_at')
         return query_set
 
     # Override .create():
@@ -89,7 +89,7 @@ class AllBooks(generics.ListCreateAPIView):
                 books = Book.objects.filter(
                     user=self.request.user,
                     genre=one_genre
-                ).order_by('created_date')
+                ).order_by('created_at')
                 # If there are no books yet under the genre, then raise an error, else return all books under the genre of that user
                 if not books:
                     raise ValidationError("You have not made a book yet in this genre")
