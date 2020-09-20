@@ -47,22 +47,17 @@ class GenreViewSet(viewsets.ModelViewSet):
             name=self.request.data['name'],
             user=self.request.user
         )
-        print(self.kwargs['pk'])
         if genre:
-            print("hello")
             if Genre.objects.get(pk=self.kwargs['pk']).name != self.request.data['name']:
-                print("bye")
                 return Response({
                     "message": "This genre already exists"
                 })
             else:
-                print("world")
                 return super().update(request, *args, **kwargs)
         else:
             return super().update(request, *args, **kwargs)
 
     def destroy(self, request, *args, **kwargs):
-        # print(kwargs)
         genre = Genre.objects.get(pk=self.kwargs['pk'])
         if not self.request.user == genre.user:
             raise PermissionDenied("You are not authorized to delete the genre")
