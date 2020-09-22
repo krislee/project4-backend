@@ -4,7 +4,7 @@ from .models import Genre, Book
 class BookSerializer(serializers.ModelSerializer):
     # Need to serialize user since we need to deserialize the user object (request.user) in view
     user = serializers.ReadOnlyField(source='user.username')
-    # WHAT IS SOURCE FOR?  WHY DON'T WE USE ReadOnlyField FOR THE OTHER FIELDS?
+ 
     # ReadOnlyField: returns the value of the field without modification
     # ReadOnlyField vs. read_only=True
 
